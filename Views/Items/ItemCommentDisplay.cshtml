@@ -1,0 +1,41 @@
+﻿@model Mvc_2nd.Models.ItemCommentsViewModel
+
+<div>
+    <h4>ItemCommentsViewModel - Buyers comments</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div>
+    <p>
+        <div>
+            <h2>Items</h2>
+            <h2>
+                Name :  @Html.DisplayFor(i => i.Item.Name)
+            </h2>
+            <b> Category :  @Html.DisplayFor(i => i.Item.Category)</b> <br />
+            <b> Price :  @Html.DisplayFor(i => i.Item.Price)</b> <br />
+            <hr />
+        </div>
+        <div>
+            <h2>
+                Comments
+            </h2>
+            @foreach (var comm in Model.Buyer)
+            {
+                <h4><b>Comments :</b> @comm.Comments</h4>
+                <h4>Name : @comm.Name</h4>
+                <h4>Rating : @comm.Rating</h4>
+                <h4>Date : @comm.Date</h4>
+            }
+
+        </div>
+    </p>
+</div>
+
+
+
